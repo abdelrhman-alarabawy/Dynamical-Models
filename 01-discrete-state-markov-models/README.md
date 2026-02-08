@@ -1,55 +1,32 @@
 # 01 — Discrete-State Markov Models
 
-## Concept in plain words
-A discrete-state Markov model describes a process that moves between a finite set of states.
-The key assumption is the **Markov property**:
+This section is now **fully started** with runnable code and tests.
 
-> The next state depends only on the current state, not the full past history.
+## What this models
+A discrete-state Markov model assumes:
 
-Example: weather states `Sunny`, `Cloudy`, `Rainy`.
+> The next state depends only on the current state.
 
----
+## Included starter code
+- `src/markov_chain.py`
+  - transition matrix validation
+  - chain simulation
+  - transition estimation from observed data
+  - stationary distribution approximation
+- `src/demo.py`
+  - end-to-end customer lifecycle example
+- `tests/test_markov_chain.py`
+  - basic correctness checks
 
-## What you should learn here
+## Run it
+From repo root:
 
-- Represent states and transitions with a transition matrix.
-- Simulate trajectories from a Markov chain.
-- Estimate transition probabilities from observed sequences.
-- Compute and interpret stationary distributions.
+```bash
+python 01-discrete-state-markov-models/src/demo.py
+python -m unittest discover -s 01-discrete-state-markov-models/tests -p "test_*.py"
+```
 
----
-
-## Practical mini-project
-
-### Project: Customer behavior state model
-Model user movement through states:
-- `Visitor`
-- `Trial`
-- `Subscriber`
-- `Churned`
-
-Tasks:
-1. Create a transition matrix.
-2. Simulate 1,000 users for 30 steps.
-3. Estimate long-term proportions in each state.
-4. Visualize transition graph and state proportions.
-
----
-
-## Implementation checklist
-
-- [ ] `src/simulate_chain.py`: simulate Markov chain paths
-- [ ] `src/estimate_transition_matrix.py`: estimate matrix from data
-- [ ] `notebooks/01_intro_markov_chain.ipynb`: step-by-step explanation
-- [ ] `figures/`: save plots
-- [ ] `tests/`: verify matrix rows sum to 1 and outputs are valid states
-
----
-
-## Deliverables for GitHub
-
-- A clear README with one intuitive example.
-- One runnable script with command-line arguments.
-- One notebook with visual explanation.
-- At least one figure (state distribution over time).
-
+## Next incremental tasks
+- [ ] Add CSV loader for real transition data
+- [ ] Add plot of state occupancy over time
+- [ ] Add notebook walkthrough (`notebooks/01_intro_markov_chain.ipynb`)
